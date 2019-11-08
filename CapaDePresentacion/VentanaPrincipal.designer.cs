@@ -39,8 +39,15 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbSupremo = new System.Windows.Forms.RadioButton();
+            this.rbGrande = new System.Windows.Forms.RadioButton();
+            this.rbMed = new System.Windows.Forms.RadioButton();
+            this.rbChica = new System.Windows.Forms.RadioButton();
             this.panelCenter.SuspendLayout();
+            this.panelVentas.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -60,6 +67,7 @@
             // 
             // panelVentas
             // 
+            this.panelVentas.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.panelVentas, "panelVentas");
             this.panelVentas.Name = "panelVentas";
             // 
@@ -112,6 +120,48 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseMove);
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbSupremo);
+            this.groupBox1.Controls.Add(this.rbGrande);
+            this.groupBox1.Controls.Add(this.rbMed);
+            this.groupBox1.Controls.Add(this.rbChica);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // rbSupremo
+            // 
+            resources.ApplyResources(this.rbSupremo, "rbSupremo");
+            this.rbSupremo.Image = global::CapaDePresentacion.Properties.Resources.pizzagrande;
+            this.rbSupremo.Name = "rbSupremo";
+            this.rbSupremo.TabStop = true;
+            this.rbSupremo.UseVisualStyleBackColor = true;
+            // 
+            // rbGrande
+            // 
+            resources.ApplyResources(this.rbGrande, "rbGrande");
+            this.rbGrande.Image = global::CapaDePresentacion.Properties.Resources.pizzamed;
+            this.rbGrande.Name = "rbGrande";
+            this.rbGrande.TabStop = true;
+            this.rbGrande.UseVisualStyleBackColor = true;
+            // 
+            // rbMed
+            // 
+            resources.ApplyResources(this.rbMed, "rbMed");
+            this.rbMed.Image = global::CapaDePresentacion.Properties.Resources.pizzach;
+            this.rbMed.Name = "rbMed";
+            this.rbMed.TabStop = true;
+            this.rbMed.UseVisualStyleBackColor = true;
+            // 
+            // rbChica
+            // 
+            resources.ApplyResources(this.rbChica, "rbChica");
+            this.rbChica.Image = global::CapaDePresentacion.Properties.Resources.pizzaper;
+            this.rbChica.Name = "rbChica";
+            this.rbChica.TabStop = true;
+            this.rbChica.UseVisualStyleBackColor = true;
+            // 
             // VentanaPrincipal
             // 
             resources.ApplyResources(this, "$this");
@@ -124,7 +174,10 @@
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.VentanaPrincipal_Paint);
             this.panelCenter.ResumeLayout(false);
             this.panelCenter.PerformLayout();
+            this.panelVentas.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -141,6 +194,11 @@
         private System.Windows.Forms.Button btnConfig;
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Panel panelVentas;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.RadioButton rbSupremo;
+        private System.Windows.Forms.RadioButton rbGrande;
+        private System.Windows.Forms.RadioButton rbMed;
+        private System.Windows.Forms.RadioButton rbChica;
     }
 }
 

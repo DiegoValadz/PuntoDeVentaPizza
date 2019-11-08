@@ -71,6 +71,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
@@ -97,6 +98,21 @@
       <Project>{0e6990fe-6afc-4c85-8856-320cc9d90fa6}</Project>
       <Name>CapaDeNegocios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizzach.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizzamed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizzagrande.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizzasuprema.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizzaper.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

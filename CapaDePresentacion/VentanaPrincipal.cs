@@ -59,6 +59,7 @@ namespace CapaDePresentacion
             btn.Location = new Point(btn.Location.X - 5, btn.Location.Y - 5);
             //ChangeColor
             btn.BackColor = ColorTranslator.FromHtml("#DB4E41");
+
             //ChangeFont
             btn.Font = new Font(new FontFamily("Segoe UI"), 25f,FontStyle.Italic);
             btn.ForeColor = Color.White;
@@ -79,6 +80,7 @@ namespace CapaDePresentacion
             btn.Location = new Point(btn.Location.X + 5, btn.Location.Y + 5);
             //ChangeColor
             btn.BackColor = ColorTranslator.FromHtml("#FFFF");
+
             //ChangeFont
             btn.Font = new Font(new FontFamily("Segoe UI"), 22.2f, FontStyle.Italic);
             btn.ForeColor = Color.Black;
