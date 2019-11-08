@@ -1,0 +1,16 @@
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\CapaDeDatos.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\CapaDeDatos.pdb
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\CapaDeEntidades.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\Google.Protobuf.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\MySql.Data.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\Renci.SshNet.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\CapaDeEntidades.pdb
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\Google.Protobuf.xml
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\MySql.Data.xml
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\bin\Debug\Renci.SshNet.xml
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\obj\Debug\CapaDeDatos.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\obj\Debug\CapaDeDatos.csproj.CopyComplete
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\obj\Debug\CapaDeDatos.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeDatos\obj\Debug\CapaDeDatos.pdb

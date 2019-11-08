@@ -1,0 +1,6 @@
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeEntidades\bin\Debug\CapaDeEntidades.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeEntidades\bin\Debug\CapaDeEntidades.pdb
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeEntidades\obj\Debug\CapaDeEntidades.csprojAssemblyReference.cache
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeEntidades\obj\Debug\CapaDeEntidades.csproj.CoreCompileInputs.cache
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeEntidades\obj\Debug\CapaDeEntidades.dll
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDeEntidades\obj\Debug\CapaDeEntidades.pdb
