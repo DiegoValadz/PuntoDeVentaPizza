@@ -15,5 +15,22 @@ namespace CapaDeNegocios
             ConsultasSelect cs = new ConsultasSelect();
             return cs.Login(usuario.UserName, usuario.Contraseña);
         }
+
+        public static List<Cliente> getClientes()
+        {
+            ConsultasSelect cs = new ConsultasSelect();
+            return cs.getClientes();
+        }
+
+        public static string insertarCliente(Cliente clienteNuevo)
+        {
+            string status = "";
+            ConsultasInsert ci = new ConsultasInsert();
+            status = ci.insertCliente(clienteNuevo);
+            return status;
+
+
+
+        }
     }
 }

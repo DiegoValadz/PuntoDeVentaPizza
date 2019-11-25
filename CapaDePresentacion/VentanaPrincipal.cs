@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaDeEntidades;
+using CapaDeNegocios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -96,6 +98,55 @@ namespace CapaDePresentacion
         {
             lbX.Text = btnVentas.Width.ToString();
             lbY.Text = btnVentas.Height.ToString();
+
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+         //   this.panelVentas.Visible = false;
+            this.panelClientes.Visible = true;
+
+            this.lvClientes.Items.Clear();
+
+            List<Cliente> clientList = ValidadorConsultas.getClientes();
+            foreach (Cliente aux in clientList)
+            {
+                ListViewItem lista = new ListViewItem();
+                lista.Text = aux.Id;
+                lista.SubItems.Add(aux.Nombre);
+                lista.SubItems.Add(aux.Correo);
+                lista.SubItems.Add(aux.Telefono);
+                lista.SubItems.Add(aux.Direccion);
+                this.lvClientes.Items.Add(lista);
+            }
+
+        }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            this.panelVentas.Visible = true;
+            this.panelClientes.Visible = false;
+
+        }
+
+        private void btnAgregarClientes_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms["NuevoCliente"] == null)
+            {
+                NuevoCliente nc = new NuevoCliente(this);
+                nc.StartPosition = FormStartPosition.CenterScreen;
+                nc.Show();
+            }
+        }
+
+        private void panelClientes_Paint(object sender, PaintEventArgs e)
+        {
+            this.lvClientes.FullRowSelect = true;
+
+        }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
 
         }
 

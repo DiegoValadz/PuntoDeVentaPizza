@@ -32,6 +32,15 @@
             this.panelBottom = new System.Windows.Forms.Panel();
             this.panelCenter = new System.Windows.Forms.Panel();
             this.panelVentas = new System.Windows.Forms.Panel();
+            this.panelClientes = new System.Windows.Forms.Panel();
+            this.lvClientes = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Correo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Telefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Dirección = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lbTitleClientes = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbY = new System.Windows.Forms.Label();
             this.lbX = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,15 +48,18 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregarClientes = new System.Windows.Forms.Button();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.btnEliminarCliente = new System.Windows.Forms.Button();
             this.rbSupremo = new System.Windows.Forms.RadioButton();
             this.rbGrande = new System.Windows.Forms.RadioButton();
             this.rbMed = new System.Windows.Forms.RadioButton();
             this.rbChica = new System.Windows.Forms.RadioButton();
             this.panelCenter.SuspendLayout();
             this.panelVentas.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelClientes.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelBottom
@@ -67,9 +79,69 @@
             // 
             // panelVentas
             // 
+            this.panelVentas.Controls.Add(this.panelClientes);
             this.panelVentas.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.panelVentas, "panelVentas");
             this.panelVentas.Name = "panelVentas";
+            // 
+            // panelClientes
+            // 
+            this.panelClientes.Controls.Add(this.btnEliminarCliente);
+            this.panelClientes.Controls.Add(this.btnEditarCliente);
+            this.panelClientes.Controls.Add(this.btnAgregarClientes);
+            this.panelClientes.Controls.Add(this.lvClientes);
+            this.panelClientes.Controls.Add(this.lbTitleClientes);
+            resources.ApplyResources(this.panelClientes, "panelClientes");
+            this.panelClientes.Name = "panelClientes";
+            this.panelClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelClientes_Paint);
+            // 
+            // lvClientes
+            // 
+            this.lvClientes.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Nombre,
+            this.Correo,
+            this.Telefono,
+            this.Dirección});
+            resources.ApplyResources(this.lvClientes, "lvClientes");
+            this.lvClientes.Name = "lvClientes";
+            this.lvClientes.UseCompatibleStateImageBehavior = false;
+            this.lvClientes.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            resources.ApplyResources(this.ID, "ID");
+            // 
+            // Nombre
+            // 
+            resources.ApplyResources(this.Nombre, "Nombre");
+            // 
+            // Correo
+            // 
+            resources.ApplyResources(this.Correo, "Correo");
+            // 
+            // Telefono
+            // 
+            resources.ApplyResources(this.Telefono, "Telefono");
+            // 
+            // Dirección
+            // 
+            resources.ApplyResources(this.Dirección, "Dirección");
+            // 
+            // lbTitleClientes
+            // 
+            resources.ApplyResources(this.lbTitleClientes, "lbTitleClientes");
+            this.lbTitleClientes.Name = "lbTitleClientes";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.rbSupremo);
+            this.groupBox1.Controls.Add(this.rbGrande);
+            this.groupBox1.Controls.Add(this.rbMed);
+            this.groupBox1.Controls.Add(this.rbChica);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
             // 
             // lbY
             // 
@@ -83,6 +155,7 @@
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.btnConfig);
             this.panel2.Controls.Add(this.btnClientes);
             this.panel2.Controls.Add(this.btnVentas);
@@ -102,6 +175,7 @@
             resources.ApplyResources(this.btnClientes, "btnClientes");
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.UseVisualStyleBackColor = true;
+            this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             this.btnClientes.MouseEnter += new System.EventHandler(this.btnVentas_MouseEnter);
             this.btnClientes.MouseLeave += new System.EventHandler(this.btnVentas_MouseLeave);
             // 
@@ -110,6 +184,7 @@
             resources.ApplyResources(this.btnVentas, "btnVentas");
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
             this.btnVentas.MouseEnter += new System.EventHandler(this.btnVentas_MouseEnter);
             this.btnVentas.MouseLeave += new System.EventHandler(this.btnVentas_MouseLeave);
             // 
@@ -120,15 +195,25 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseMove);
             // 
-            // groupBox1
+            // btnAgregarClientes
             // 
-            this.groupBox1.Controls.Add(this.rbSupremo);
-            this.groupBox1.Controls.Add(this.rbGrande);
-            this.groupBox1.Controls.Add(this.rbMed);
-            this.groupBox1.Controls.Add(this.rbChica);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.TabStop = false;
+            resources.ApplyResources(this.btnAgregarClientes, "btnAgregarClientes");
+            this.btnAgregarClientes.Name = "btnAgregarClientes";
+            this.btnAgregarClientes.UseVisualStyleBackColor = true;
+            this.btnAgregarClientes.Click += new System.EventHandler(this.btnAgregarClientes_Click);
+            // 
+            // btnEditarCliente
+            // 
+            resources.ApplyResources(this.btnEditarCliente, "btnEditarCliente");
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
+            // 
+            // btnEliminarCliente
+            // 
+            resources.ApplyResources(this.btnEliminarCliente, "btnEliminarCliente");
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.UseVisualStyleBackColor = true;
             // 
             // rbSupremo
             // 
@@ -175,9 +260,11 @@
             this.panelCenter.ResumeLayout(false);
             this.panelCenter.PerformLayout();
             this.panelVentas.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelClientes.ResumeLayout(false);
+            this.panelClientes.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
 		}
@@ -199,6 +286,17 @@
         private System.Windows.Forms.RadioButton rbGrande;
         private System.Windows.Forms.RadioButton rbMed;
         private System.Windows.Forms.RadioButton rbChica;
+        private System.Windows.Forms.Panel panelClientes;
+        private System.Windows.Forms.Label lbTitleClientes;
+        private System.Windows.Forms.ListView lvClientes;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Correo;
+        private System.Windows.Forms.ColumnHeader Telefono;
+        private System.Windows.Forms.ColumnHeader Dirección;
+        private System.Windows.Forms.Button btnEliminarCliente;
+        private System.Windows.Forms.Button btnEditarCliente;
+        private System.Windows.Forms.Button btnAgregarClientes;
     }
 }
 

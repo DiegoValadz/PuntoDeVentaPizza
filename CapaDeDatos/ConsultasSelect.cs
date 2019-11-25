@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CapaDeEntidades;
 using MySql.Data;
 using MySql.Data.MySqlClient;
 
@@ -51,6 +52,35 @@ namespace CapaDeDatos
          //       return res;
 
         //    }
+        }
+
+        public List<Cliente> getClientes()
+        {
+            List<Cliente> clientes = new List<Cliente>();
+            myQuery = "select * from cliente;";
+            MySqlCommand query = new MySqlCommand(myQuery);
+            query.Connection = con.abrirConexion();
+            MySqlDataReader reader = query.ExecuteReader();
+
+
+
+            while (reader.Read())
+            {
+                Cliente c = new Cliente();
+                c.Id = ((int)reader["ClienteID"]).ToString();
+                c.Nombre = (string)reader["Nombre"];
+                c.Correo = (string)reader["Correo"];
+                c.Telefono = (string)reader["Telefono"];
+                c.Direccion = (string)reader["Direccion"];
+                clientes.Add(c);
+            }
+        
+            query.Connection = con.cerrarConexion();
+
+            return clientes;
+
+
+
         }
     }
 }
