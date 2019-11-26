@@ -33,6 +33,9 @@
             this.panelCenter = new System.Windows.Forms.Panel();
             this.panelVentas = new System.Windows.Forms.Panel();
             this.panelClientes = new System.Windows.Forms.Panel();
+            this.btnEliminarCliente = new System.Windows.Forms.Button();
+            this.btnEditarCliente = new System.Windows.Forms.Button();
+            this.btnAgregarClientes = new System.Windows.Forms.Button();
             this.lvClientes = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -41,6 +44,10 @@
             this.Dirección = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbTitleClientes = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbSupremo = new System.Windows.Forms.RadioButton();
+            this.rbGrande = new System.Windows.Forms.RadioButton();
+            this.rbMed = new System.Windows.Forms.RadioButton();
+            this.rbChica = new System.Windows.Forms.RadioButton();
             this.lbY = new System.Windows.Forms.Label();
             this.lbX = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -48,13 +55,7 @@
             this.btnClientes = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.btnAgregarClientes = new System.Windows.Forms.Button();
-            this.btnEditarCliente = new System.Windows.Forms.Button();
-            this.btnEliminarCliente = new System.Windows.Forms.Button();
-            this.rbSupremo = new System.Windows.Forms.RadioButton();
-            this.rbGrande = new System.Windows.Forms.RadioButton();
-            this.rbMed = new System.Windows.Forms.RadioButton();
-            this.rbChica = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelCenter.SuspendLayout();
             this.panelVentas.SuspendLayout();
             this.panelClientes.SuspendLayout();
@@ -94,6 +95,26 @@
             resources.ApplyResources(this.panelClientes, "panelClientes");
             this.panelClientes.Name = "panelClientes";
             this.panelClientes.Paint += new System.Windows.Forms.PaintEventHandler(this.panelClientes_Paint);
+            // 
+            // btnEliminarCliente
+            // 
+            resources.ApplyResources(this.btnEliminarCliente, "btnEliminarCliente");
+            this.btnEliminarCliente.Name = "btnEliminarCliente";
+            this.btnEliminarCliente.UseVisualStyleBackColor = true;
+            // 
+            // btnEditarCliente
+            // 
+            resources.ApplyResources(this.btnEditarCliente, "btnEditarCliente");
+            this.btnEditarCliente.Name = "btnEditarCliente";
+            this.btnEditarCliente.UseVisualStyleBackColor = true;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
+            // 
+            // btnAgregarClientes
+            // 
+            resources.ApplyResources(this.btnAgregarClientes, "btnAgregarClientes");
+            this.btnAgregarClientes.Name = "btnAgregarClientes";
+            this.btnAgregarClientes.UseVisualStyleBackColor = true;
+            this.btnAgregarClientes.Click += new System.EventHandler(this.btnAgregarClientes_Click);
             // 
             // lvClientes
             // 
@@ -143,6 +164,38 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // rbSupremo
+            // 
+            resources.ApplyResources(this.rbSupremo, "rbSupremo");
+            this.rbSupremo.Image = global::CapaDePresentacion.Properties.Resources.pizzagrande;
+            this.rbSupremo.Name = "rbSupremo";
+            this.rbSupremo.TabStop = true;
+            this.rbSupremo.UseVisualStyleBackColor = true;
+            // 
+            // rbGrande
+            // 
+            resources.ApplyResources(this.rbGrande, "rbGrande");
+            this.rbGrande.Image = global::CapaDePresentacion.Properties.Resources.pizzamed;
+            this.rbGrande.Name = "rbGrande";
+            this.rbGrande.TabStop = true;
+            this.rbGrande.UseVisualStyleBackColor = true;
+            // 
+            // rbMed
+            // 
+            resources.ApplyResources(this.rbMed, "rbMed");
+            this.rbMed.Image = global::CapaDePresentacion.Properties.Resources.pizzach;
+            this.rbMed.Name = "rbMed";
+            this.rbMed.TabStop = true;
+            this.rbMed.UseVisualStyleBackColor = true;
+            // 
+            // rbChica
+            // 
+            resources.ApplyResources(this.rbChica, "rbChica");
+            this.rbChica.Image = global::CapaDePresentacion.Properties.Resources.pizzaper;
+            this.rbChica.Name = "rbChica";
+            this.rbChica.TabStop = true;
+            this.rbChica.UseVisualStyleBackColor = true;
+            // 
             // lbY
             // 
             resources.ApplyResources(this.lbY, "lbY");
@@ -156,6 +209,7 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnConfig);
             this.panel2.Controls.Add(this.btnClientes);
             this.panel2.Controls.Add(this.btnVentas);
@@ -195,57 +249,11 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelTop_MouseMove);
             // 
-            // btnAgregarClientes
+            // button1
             // 
-            resources.ApplyResources(this.btnAgregarClientes, "btnAgregarClientes");
-            this.btnAgregarClientes.Name = "btnAgregarClientes";
-            this.btnAgregarClientes.UseVisualStyleBackColor = true;
-            this.btnAgregarClientes.Click += new System.EventHandler(this.btnAgregarClientes_Click);
-            // 
-            // btnEditarCliente
-            // 
-            resources.ApplyResources(this.btnEditarCliente, "btnEditarCliente");
-            this.btnEditarCliente.Name = "btnEditarCliente";
-            this.btnEditarCliente.UseVisualStyleBackColor = true;
-            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
-            // 
-            // btnEliminarCliente
-            // 
-            resources.ApplyResources(this.btnEliminarCliente, "btnEliminarCliente");
-            this.btnEliminarCliente.Name = "btnEliminarCliente";
-            this.btnEliminarCliente.UseVisualStyleBackColor = true;
-            // 
-            // rbSupremo
-            // 
-            resources.ApplyResources(this.rbSupremo, "rbSupremo");
-            this.rbSupremo.Image = global::CapaDePresentacion.Properties.Resources.pizzagrande;
-            this.rbSupremo.Name = "rbSupremo";
-            this.rbSupremo.TabStop = true;
-            this.rbSupremo.UseVisualStyleBackColor = true;
-            // 
-            // rbGrande
-            // 
-            resources.ApplyResources(this.rbGrande, "rbGrande");
-            this.rbGrande.Image = global::CapaDePresentacion.Properties.Resources.pizzamed;
-            this.rbGrande.Name = "rbGrande";
-            this.rbGrande.TabStop = true;
-            this.rbGrande.UseVisualStyleBackColor = true;
-            // 
-            // rbMed
-            // 
-            resources.ApplyResources(this.rbMed, "rbMed");
-            this.rbMed.Image = global::CapaDePresentacion.Properties.Resources.pizzach;
-            this.rbMed.Name = "rbMed";
-            this.rbMed.TabStop = true;
-            this.rbMed.UseVisualStyleBackColor = true;
-            // 
-            // rbChica
-            // 
-            resources.ApplyResources(this.rbChica, "rbChica");
-            this.rbChica.Image = global::CapaDePresentacion.Properties.Resources.pizzaper;
-            this.rbChica.Name = "rbChica";
-            this.rbChica.TabStop = true;
-            this.rbChica.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // VentanaPrincipal
             // 
@@ -288,7 +296,7 @@
         private System.Windows.Forms.RadioButton rbChica;
         private System.Windows.Forms.Panel panelClientes;
         private System.Windows.Forms.Label lbTitleClientes;
-        private System.Windows.Forms.ListView lvClientes;
+        public System.Windows.Forms.ListView lvClientes;
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Nombre;
         private System.Windows.Forms.ColumnHeader Correo;
@@ -297,6 +305,7 @@
         private System.Windows.Forms.Button btnEliminarCliente;
         private System.Windows.Forms.Button btnEditarCliente;
         private System.Windows.Forms.Button btnAgregarClientes;
+        private System.Windows.Forms.Button button1;
     }
 }
 

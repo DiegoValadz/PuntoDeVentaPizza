@@ -627,6 +627,42 @@
   <data name="&gt;&gt;lbX.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 22.2pt</value>
+  </data>
+  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 77</value>
+  </data>
+  <data name="button1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 2, 2, 2</value>
+  </data>
+  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>243, 57</value>
+  </data>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Inicio</value>
+  </data>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panel2</value>
+  </data>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="btnConfig.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -637,13 +673,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnConfig.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-2, 333</value>
+    <value>-2, 361</value>
   </data>
   <data name="btnConfig.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="btnConfig.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 58</value>
+    <value>245, 58</value>
   </data>
   <data name="btnConfig.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -661,7 +697,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;btnConfig.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="btnClientes.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -673,13 +709,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnClientes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 235</value>
+    <value>0, 263</value>
   </data>
   <data name="btnClientes.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="btnClientes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 58</value>
+    <value>243, 58</value>
   </data>
   <data name="btnClientes.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -697,7 +733,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;btnClientes.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="btnVentas.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -709,13 +745,13 @@
     <value>NoControl</value>
   </data>
   <data name="btnVentas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 141</value>
+    <value>0, 169</value>
   </data>
   <data name="btnVentas.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>2, 2, 2, 2</value>
   </data>
   <data name="btnVentas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>242, 57</value>
+    <value>243, 57</value>
   </data>
   <data name="btnVentas.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -733,7 +769,7 @@
     <value>panel2</value>
   </data>
   <data name="&gt;&gt;btnVentas.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="panel2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>

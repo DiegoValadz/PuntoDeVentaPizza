@@ -16,8 +16,8 @@ namespace CapaDeDatos
         public Conexion()
         {
             // msg = "server=DESKTOP-GKTAMUP; port=3306; user id=root; password=1234; database=PizzaDB ;";
-            // msg = "Server=127.0.0.1;Database=pizzadb; Uid=root;Pwd=Pa55word;";
-            msg = "Server=127.0.0.1;Database=pizzadb; Uid=root;Pwd=1234;";
+             msg = "Server=127.0.0.1;Database=pizzadb; Uid=root;Pwd=Pa55word;";
+           // msg = "Server=127.0.0.1;Database=pizzadb; Uid=root;Pwd=1234;";
             conexionBD = new MySqlConnection(msg);
         }
 

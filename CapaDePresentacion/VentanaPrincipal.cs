@@ -133,7 +133,7 @@ namespace CapaDePresentacion
         {
             if (Application.OpenForms["NuevoCliente"] == null)
             {
-                NuevoCliente nc = new NuevoCliente(this);
+                NuevoCliente nc = new NuevoCliente(this,NuevoCliente.NUEVOCLIENTE);
                 nc.StartPosition = FormStartPosition.CenterScreen;
                 nc.Show();
             }
@@ -147,7 +147,21 @@ namespace CapaDePresentacion
 
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string id = this.lvClientes.FocusedItem.Text.ToString();
+                if (Application.OpenForms["NuevoCliente"] == null)
+                {
+                    NuevoCliente m = new NuevoCliente(this,NuevoCliente.MODIFICARCLIENTE);
+                    m.StartPosition = FormStartPosition.CenterScreen;
+                    m.Show();
+                }
 
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar primero un elemento a modificar");
+            }
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)

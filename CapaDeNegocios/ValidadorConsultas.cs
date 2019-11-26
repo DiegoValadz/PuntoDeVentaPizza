@@ -32,5 +32,10 @@ namespace CapaDeNegocios
 
 
         }
+
+        public static void updateCliente(Cliente clienteModifi)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

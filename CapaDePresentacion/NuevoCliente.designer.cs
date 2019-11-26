@@ -70,15 +70,15 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(368, 426);
+            this.panel1.Size = new System.Drawing.Size(368, 441);
             this.panel1.TabIndex = 2;
             // 
             // btnAddMaq
             // 
             this.btnAddMaq.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(156)))), ((int)(((byte)(12)))));
-            this.btnAddMaq.Font = new System.Drawing.Font("Microsoft Yi Baiti", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddMaq.Font = new System.Drawing.Font("Microsoft Yi Baiti", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddMaq.ForeColor = System.Drawing.Color.White;
-            this.btnAddMaq.Location = new System.Drawing.Point(87, 381);
+            this.btnAddMaq.Location = new System.Drawing.Point(88, 386);
             this.btnAddMaq.Name = "btnAddMaq";
             this.btnAddMaq.Size = new System.Drawing.Size(199, 33);
             this.btnAddMaq.TabIndex = 30;
@@ -91,35 +91,35 @@
             this.txtDireccion.Location = new System.Drawing.Point(111, 317);
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(239, 45);
+            this.txtDireccion.Size = new System.Drawing.Size(223, 45);
             this.txtDireccion.TabIndex = 20;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(111, 254);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(239, 20);
+            this.txtTelefono.Size = new System.Drawing.Size(223, 20);
             this.txtTelefono.TabIndex = 19;
             // 
             // txtCorreo
             // 
             this.txtCorreo.Location = new System.Drawing.Point(111, 194);
             this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(239, 20);
+            this.txtCorreo.Size = new System.Drawing.Size(223, 20);
             this.txtCorreo.TabIndex = 18;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(111, 130);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(239, 20);
+            this.txtNombre.Size = new System.Drawing.Size(223, 20);
             this.txtNombre.TabIndex = 17;
             // 
             // txtID
             // 
             this.txtID.Location = new System.Drawing.Point(111, 74);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(239, 20);
+            this.txtID.Size = new System.Drawing.Size(223, 20);
             this.txtID.TabIndex = 16;
             // 
             // lbTitle
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 426);
+            this.ClientSize = new System.Drawing.Size(368, 441);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLinea);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;

@@ -48,3 +48,4 @@ C:\Users\diego\Desktop\PuntoDeVentaPizza\CapaDePresentacion\obj\Debug\CapaDePres
 C:\Users\diego\Desktop\PuntoDeVentaPizza\CapaDePresentacion\obj\Debug\CapaDePresentacion.exe
 C:\Users\diego\Desktop\PuntoDeVentaPizza\CapaDePresentacion\obj\Debug\CapaDePresentacion.pdb
 C:\Users\diego\Desktop\PuntoDeVentaPizza\CapaDePresentacion\obj\Debug\CapaDePresentacion.NuevoCliente.resources
+C:\Users\diego\source\repos\PizzaPuntoDeVenta\CapaDePresentacion\obj\Debug\CapaDePresentacion.NuevoCliente.resources
