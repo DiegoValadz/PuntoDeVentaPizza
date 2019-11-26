@@ -33,9 +33,12 @@ namespace CapaDeNegocios
 
         }
 
-        public static void updateCliente(Cliente clienteModifi)
+        public static bool updateCliente(Cliente clienteModifi)
         {
-            throw new NotImplementedException();
+            ConsultasUpdate cu = new ConsultasUpdate();
+            return cu.updateCliente(clienteModifi);
+
+
         }
     }
 }

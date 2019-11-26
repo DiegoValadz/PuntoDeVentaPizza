@@ -23,8 +23,8 @@ namespace CapaDeDatos
         {
             int res = -1;
             MySqlCommand query = new MySqlCommand();
-          //  try
-          //  {
+            try
+            {
                 query.CommandText = "sp_login";
                 query.CommandType = CommandType.StoredProcedure;
                 query.Parameters.Add("userP", MySqlDbType.VarChar).Value = User;
@@ -42,16 +42,16 @@ namespace CapaDeDatos
 
                 return res;
 
-          //  }
-         //   catch (InvalidCastException)
-         //   {
-         //       return res;
-        //    }
-         //   catch (InvalidOperationException)
-         //   {
-         //       return res;
+            }
+            catch (InvalidCastException)
+            {
+                return res;
+            }
+            catch (InvalidOperationException)
+            {
+                return res;
 
-        //    }
+            }
         }
 
         public List<Cliente> getClientes()

@@ -64,6 +64,7 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="ConsultasInsert.cs" />
     <Compile Include="ConsultasSelect.cs" />
+    <Compile Include="ConsultasUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

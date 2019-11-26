@@ -36,12 +36,12 @@ namespace CapaDeDatos
 
                 query.ExecuteNonQuery();
                 query.Connection = con.cerrarConexion();
-                return "Si se pudo";
+                return "El Cliente ha sido agregado con exito";
             }
             catch (MySqlException)
             {
                 //  MessageBox.Show("No se pudo agregar la máquina porque el ID ya existe");
-                return "No se pudo";
+                return "El cliente no es valido o ya existe.";
 
             }
         }
