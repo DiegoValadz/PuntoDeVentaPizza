@@ -122,7 +122,12 @@ namespace CapaDePresentacion
             {
                 btnIngresar.PerformClick();
             }
-        }            
+        }
+
+        private void panelCentralLog_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
         private void btnCerrarLog_Click(object sender, EventArgs e)
         {

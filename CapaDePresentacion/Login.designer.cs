@@ -31,9 +31,9 @@
             this.txtBUsuario = new System.Windows.Forms.TextBox();
             this.txtBContraseña = new System.Windows.Forms.TextBox();
             this.panelCentralLog = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.panelSupLogin = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCentralLog.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,6 +78,17 @@
             this.panelCentralLog.Name = "panelCentralLog";
             this.panelCentralLog.Size = new System.Drawing.Size(346, 413);
             this.panelCentralLog.TabIndex = 1;
+            this.panelCentralLog.Paint += new System.Windows.Forms.PaintEventHandler(this.panelCentralLog_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::CapaDePresentacion.Properties.Resources.pizzalogo;
+            this.pictureBox1.Location = new System.Drawing.Point(83, 37);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(183, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // btnIngresar
             // 
@@ -102,16 +113,6 @@
             this.panelSupLogin.Size = new System.Drawing.Size(346, 35);
             this.panelSupLogin.TabIndex = 0;
             this.panelSupLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelSupLogin_MouseMove);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::CapaDePresentacion.Properties.Resources.pizzalogo;
-            this.pictureBox1.Location = new System.Drawing.Point(83, 37);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(183, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // Login
             // 

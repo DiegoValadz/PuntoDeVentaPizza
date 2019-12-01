@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="ConsultasDelete.cs" />
     <Compile Include="ConsultasInsert.cs" />
     <Compile Include="ConsultasSelect.cs" />
     <Compile Include="ConsultasUpdate.cs" />

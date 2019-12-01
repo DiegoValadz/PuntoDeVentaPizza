@@ -17,7 +17,7 @@ namespace CapaDePresentacion
         private int xClick = 0, yClick = 0;
         private VentanaPrincipal vp;
         public static int NUEVOCLIENTE = 0;
-        public static int MODIFICARCLIENTE = 1
+        public static int MODIFICARCLIENTE = 1;
         private int tipo;
 
         public NuevoCliente()
@@ -45,12 +45,6 @@ namespace CapaDePresentacion
                     this.txtCorreo.Text = vp.lvClientes.SelectedItems[0].SubItems[2].Text.ToString();
                     this.txtTelefono.Text = vp.lvClientes.SelectedItems[0].SubItems[3].Text.ToString();
                     this.txtDireccion.Text = vp.lvClientes.SelectedItems[0].SubItems[4].Text.ToString();
-
-
-
-
-
-
 
 
                     break;
@@ -103,7 +97,9 @@ namespace CapaDePresentacion
                             clienteNuevo.Telefono = this.txtTelefono.Text.ToString();
                             msg = "Introduce una dirección valida";
                             clienteNuevo.Direccion = this.txtDireccion.Text.ToString();
+                            vp.actualizarListaClientes();
                             MessageBox.Show(ValidadorConsultas.insertarCliente(clienteNuevo));
+
                         }
                         else
                         {
@@ -123,8 +119,8 @@ namespace CapaDePresentacion
                     clienteModifi.Telefono = this.txtTelefono.Text.ToString();
                     clienteModifi.Direccion = this.txtDireccion.Text.ToString();                   
                     ValidadorConsultas.updateCliente(clienteModifi);
-                    cCat.actualizarPanelIndicadores();
                     this.Close();
+                    vp.actualizarListaClientes();
 
 
 
@@ -142,7 +138,8 @@ namespace CapaDePresentacion
            
 
         }
-        
+       
+
     }  
 
 }

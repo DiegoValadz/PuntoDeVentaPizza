@@ -96,16 +96,24 @@ namespace CapaDePresentacion
 
         private void VentanaPrincipal_Paint(object sender, PaintEventArgs e)
         {
-            lbX.Text = btnVentas.Width.ToString();
-            lbY.Text = btnVentas.Height.ToString();
+        /*    lbX.Text = btnVentas.Width.ToString();
+            lbY.Text = btnVentas.Height.ToString();*/
 
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-         //   this.panelVentas.Visible = false;
+            //   this.panelVentas.Visible = false;
+            this.tabControl1.Visible = false;
             this.panelClientes.Visible = true;
+            actualizarListaClientes();
 
+            
+
+        }
+
+        public void actualizarListaClientes()
+        {
             this.lvClientes.Items.Clear();
 
             List<Cliente> clientList = ValidadorConsultas.getClientes();
@@ -119,15 +127,37 @@ namespace CapaDePresentacion
                 lista.SubItems.Add(aux.Direccion);
                 this.lvClientes.Items.Add(lista);
             }
-
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            this.panelVentas.Visible = true;
+            this.tabControl1.Visible = true;
             this.panelClientes.Visible = false;
 
         }
+
+
+        public void actualizarListaVentas()
+        {
+            this.lbVentas.Items.Clear();
+
+            List<Venta> ventList = ValidadorConsultas.getVentas();
+            foreach (Venta aux in ventList)
+            {
+                ListViewItem lista = new ListViewItem();
+                lista.Text = aux.VentaID.ToString();
+                lista.SubItems.Add(aux.Usuario);
+                lista.SubItems.Add(aux.Producto);
+                lista.SubItems.Add(aux.Cliente);
+                lista.SubItems.Add(aux.Repartidor);
+                lista.SubItems.Add(aux.PrecioTotal);
+                lista.SubItems.Add(aux.Fecha);
+                lista.SubItems.Add(aux.EstadoVenta);
+                this.lbVentas.Items.Add(lista);
+            }
+        }
+
+    
 
         private void btnAgregarClientes_Click(object sender, EventArgs e)
         {
@@ -142,6 +172,8 @@ namespace CapaDePresentacion
         private void panelClientes_Paint(object sender, PaintEventArgs e)
         {
             this.lvClientes.FullRowSelect = true;
+            this.lbVentas.FullRowSelect = true;
+            
 
         }
 
@@ -156,6 +188,272 @@ namespace CapaDePresentacion
                     m.StartPosition = FormStartPosition.CenterScreen;
                     m.Show();
                 }
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar primero un elemento a modificar");
+            }
+        }
+
+        private void btnEliminarCliente_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = this.lvClientes.FocusedItem.Text.ToString();
+                ValidadorConsultas.deleteCliente(id);
+                actualizarListaClientes();
+
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Debes seleccionar primero un elemento a modificar");
+            }
+        }
+
+        private void VentanaPrincipal_Load(object sender, EventArgs e)
+        {
+            TempObjects.productos = ValidadorConsultas.getProductos();
+            TempObjects.tamaños = ValidadorConsultas.getTamaños();
+            TempObjects.clientes = ValidadorConsultas.getClientes();
+            TempObjects.ventas = ValidadorConsultas.getVentas();
+
+            TempObjects.repartidores = ValidadorConsultas.getRepartidores();
+
+
+            //  TempObjects.ingredientes = ValidadorConsultas.getColumna("Nombre","Ingredientes");
+            //  listBDisponibles.DataSource = TempObjects.ingredientes;
+
+            List<string> prodNames  = extractNames();
+            List<string> clientesNames = extractClientes();
+            List<string> repNames = extractReps();
+
+            this.cbRepartidor.DataSource = repNames;
+            this.cbProducto.DataSource = prodNames;
+            this.cbCliente.DataSource = clientesNames;
+        }
+
+        private List<string> extractReps()
+        {
+            List<string> aux = new List<string>();
+            foreach (Repartidor r in TempObjects.repartidores)
+            {
+                aux.Add(r.Nombre);
+            }
+            return aux;
+        }
+
+        private List<string> extractClientes()
+        {
+            List<string> aux = new List<string>();
+            foreach (Cliente c in TempObjects.clientes)
+            {
+                aux.Add(c.Nombre);
+            }
+            return aux;
+        }
+
+        private void cbProducto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string catAux = this.cbProducto.SelectedValue.ToString();
+            TempObjects.productosActualVenta = findProductData(catAux);
+            updateTicket();
+
+        }
+
+        private void updateTicket()
+        {
+            TempObjects.fechaActualVenta = Utilities.GetDateTimeUtc(); ;
+            TempObjects.ticketActualVenta = "\t\t\tTicket de Venta";
+            TempObjects.ticketActualVenta += "\n\nFecha: \t" + TempObjects.fechaActualVenta;
+            TempObjects.ticketActualVenta += "\nProducto: " + TempObjects.productosActualVenta.Nombre;
+            TempObjects.ticketActualVenta += "\nDescripción: " + TempObjects.productosActualVenta.Descripcion;
+            TempObjects.ticketActualVenta += "\nIngredientes: "+ TempObjects.ingredientes;
+            TempObjects.ticketActualVenta += "\nTamaño de la Orden: " + TempObjects.tamañoActualVenta.TamañoValue;
+            TempObjects.ticketActualVenta += "\nCliente: " + TempObjects.clienteActualVenta.Nombre;
+            TempObjects.ticketActualVenta += "\nDirección: "+ TempObjects.clienteActualVenta.Direccion; 
+            TempObjects.ticketActualVenta += "\nRepartidor: " + TempObjects.repartidoreActualVenta.Nombre; 
+            TempObjects.ticketActualVenta += "\nPrecio Unitario: $" + TempObjects.productosActualVenta.PrecioUnitario;
+            TempObjects.ticketActualVenta += "\nIVA: 16%";
+            TempObjects.ticketActualVenta += "\nCostos Adicionales: $"+ Utilities.calcularCostosAdd();
+            TempObjects.ticketActualVenta += "\nTotal: $"+ Utilities.calcularTotal();
+
+            tbTicket.Text = TempObjects.ticketActualVenta;
+
+
+        }
+        private void btnChooseIng_Click(object sender, EventArgs e)
+        {
+            moveListBoxItems(listBDisponibles, listBSelect,0);
+            updateTicket();
+        }
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            moveListBoxItems( listBSelect, listBDisponibles,1);
+            updateTicket();
+
+        }
+
+        private void moveListBoxItems(ListBox source, ListBox destination,int selector)
+        {
+            try
+            {
+                ListBox.SelectedObjectCollection sourceItems = source.SelectedItems;
+                foreach (var item in sourceItems)
+                {
+                    destination.Items.Add(item);
+                    switch (selector)
+                    {
+                        case 0:
+                            TempObjects.ingredientesList.Add(item.ToString());
+                            Utilities.updateIngredientes();
+
+                            break;
+                        case 1:
+
+                            foreach (string s in TempObjects.ingredientesList)
+                            {
+                                if (s.Equals(item.ToString()))
+                                {
+                                    TempObjects.ingredientesList.Remove(s);
+                                    Utilities.updateIngredientes();
+
+                                }
+                            }
+                            break;
+                    }
+                }
+                while (source.SelectedItems.Count > 0)
+                {
+                    source.Items.Remove(source.SelectedItems[0]);
+                    switch (selector)
+                    {
+
+                    }
+                }
+            }
+            catch (InvalidOperationException)
+            {
+
+            }
+            
+        }
+
+        private List<string> extractNames()
+        {
+            List<string> aux = new List<string>();
+            foreach (Producto p in TempObjects.productos)
+            {
+                aux.Add(p.Nombre);
+            }
+            return aux;
+        }
+        private Producto findProductData(string name)
+        {
+            Producto aux = new Producto();
+            foreach (Producto p in TempObjects.productos)
+            {
+                if (p.Nombre.Equals(name))
+                    aux = p;
+            }
+            return aux;
+        }
+        private Tamaño findSizeData(string size)
+        {
+            Tamaño aux = new Tamaño();
+            foreach (Tamaño t in TempObjects.tamaños)
+            {
+                if (t.TamañoValue.Equals(size))
+                    aux = t;
+            }
+            return aux;
+        }
+
+        private void rbChica_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbChica.Checked == true)
+            {
+                TempObjects.tamañoActualVenta = findSizeData("Chica");
+            }
+            else if (rbMed.Checked == true)
+            {
+                TempObjects.tamañoActualVenta = findSizeData("Mediana");
+
+            }
+            else if (rbGrande.Checked == true)
+            {
+                TempObjects.tamañoActualVenta = findSizeData("Grande");
+
+            }
+            else if (rbSupremo.Checked == true)
+            {
+                TempObjects.tamañoActualVenta = findSizeData("Suprema");
+            }
+            updateTicket();
+        }
+
+        private void cbCliente_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string catAux = this.cbCliente.SelectedValue.ToString();
+            TempObjects.clienteActualVenta = findClientetData(catAux);
+            updateTicket();
+        }
+
+        private Cliente findClientetData(string catAux)
+        {
+            Cliente aux = new Cliente();
+            foreach (Cliente c in TempObjects.clientes)
+            {
+                if (c.Nombre.Equals(catAux))
+                    aux = c;
+            }
+            return aux;
+        }
+
+        private void cbRepartidor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string catAux = this.cbRepartidor.SelectedValue.ToString();
+            TempObjects.repartidoreActualVenta = findReptData(catAux);
+            updateTicket();
+        }
+
+        private Repartidor findReptData(string catAux)
+        {
+            Repartidor aux = new Repartidor();
+            foreach (Repartidor c in TempObjects.repartidores)
+            {
+                if (c.Nombre.Equals(catAux))
+                    aux = c;
+            }
+            return aux;
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show( ValidadorConsultas.generarVenta());
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            actualizarListaVentas();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string id = this.lbVentas.FocusedItem.Text.ToString();
+                if (ValidadorConsultas.deleteVenta(id))
+                {
+                    MessageBox.Show("La venta fue eliminada con exito");
+
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error al eliminar la venta");
+
+                }
+                actualizarListaVentas();
 
             }
             catch (NullReferenceException)
@@ -183,5 +481,7 @@ namespace CapaDePresentacion
                     break;
             }
         }
+
+       
     }
 }

@@ -40,5 +40,60 @@ namespace CapaDeNegocios
 
 
         }
+
+        public static void deleteCliente(string id)
+        {
+            ConsultasDelete cd = new ConsultasDelete();
+            cd.deleteCliente(id);
+
+
+        }
+
+        public static List<Producto> getProductos()
+        {
+            ConsultasSelect cs = new ConsultasSelect();
+            return cs.getProductos();
+        }
+
+        public static List<Tamaño> getTamaños()
+        {
+            ConsultasSelect cs = new ConsultasSelect();
+            return cs.getTamaños();
+        }
+
+        public static List<string> getColumna(string columna, string tabla)
+        {
+            ConsultasSelect cs = new ConsultasSelect();
+            return cs.columnaSelect(columna,tabla);
+        }
+
+        public static List<Repartidor> getRepartidores()
+        {
+            ConsultasSelect cs = new ConsultasSelect();
+            return cs.getRepartidores();
+        }
+
+        public static string generarVenta()
+        {
+            string status = "";
+
+            ConsultasInsert ci = new ConsultasInsert();
+            status = ci.insertarVenta();
+            return status;
+        }
+
+        public static List<Venta> getVentas()
+        {
+            ConsultasSelect cs = new ConsultasSelect();
+            return cs.getVentas();
+        }
+
+        public static bool deleteVenta(string id)
+        {
+
+            ConsultasDelete cd = new ConsultasDelete();
+            return cd.deleteVenta(id);
+
+        }
     }
 }
